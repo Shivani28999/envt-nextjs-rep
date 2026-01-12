@@ -19,6 +19,7 @@ export default function Home() {
           <h1>
             <div>Region1{process.env.AMPLIFY_AWS_REGION}</div>
             <div>Region2{process.env.AMPLIFY_AWS_SES_REGION}</div>
+            <div>Accesskeyid{process.env.AMPLIFY_AWS_ACCESS_KEY_ID}</div>
             <div>{getEmailCredentials()}</div>
           </h1>
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
