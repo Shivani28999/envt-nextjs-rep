@@ -29,8 +29,6 @@ priority
 To get started, edit the page.tsx file.
 </h1>
 <h1>
-<div>Table:{process.env.MUSIC_TABLE_NAME}</div>
-<div>Region2{process.env.AMPLIFY_AWS_SES_REGION}</div>
 <div>Accesskeyid{process.env.AMPLIFY_AWS_ACCESS_KEY_ID}</div>
 <div>{temp}</div>
 </h1>
