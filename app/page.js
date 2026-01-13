@@ -5,7 +5,7 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, PutCommand , ScanCommand} from "@aws-sdk/lib-dynamodb";
 
 
-const AWS_REGION = process.env.AMPLIFY_AWS_DEFAULT_REGION || 'us-east-2';
+const AWS_REGION = process.env.AMPLIFY_AWS_DEFAULT_REGION || 'ap-south-1';
 const secretsManager = new SecretsManagerClient({ region: AWS_REGION });
 const dynamoClient = new DynamoDBClient({ region: AWS_REGION });
 const docClient = DynamoDBDocumentClient.from(dynamoClient, {
