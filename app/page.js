@@ -1,27 +1,3 @@
-/*
-'use server';
-import { SecretsManagerClient, GetSecretValueCommand } from "@aws-sdk/client-secrets-manager";
-// Initialize the Secrets Manager client once
-const secretsManager = new SecretsManagerClient({
-  region: process.env.AWS_REGION || 'us-east-1' // Replace with your region
-});
-export default async function getEmailCredentials() {
-  try {
-    const command = new GetSecretValueCommand({
-      SecretId: "replicate-nectjs-env",
-    });
-    const response = await secretsManager.send(command);
-    //const secrets=JSON.parse(command.SecretString||"{}");
-    //return { AWS_SES_REGION: secrets.AMPLIFY_AWS_SES_REGION || process.env.AMPLIFY_AWS_SES_REGION}
-    return JSON.stringify(response.SecretString);
-  } catch (error) {
-    console.error("Error retrieving secrets:", error);
-    throw new Error("Failed to retrieve secret credentials");
-  }
-}*/
-
-
-
 'use server';
 
 import { SecretsManagerClient, GetSecretValueCommand } from "@aws-sdk/client-secrets-manager";
@@ -29,7 +5,7 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, PutCommand , ScanCommand} from "@aws-sdk/lib-dynamodb";
 
 
-const AWS_REGION = process.env.AMPLIFY_AWS_DEFAULT_REGION || 'us-east-1';
+const AWS_REGION = process.env.AMPLIFY_AWS_DEFAULT_REGION || 'us-east-2';
 const secretsManager = new SecretsManagerClient({ region: AWS_REGION });
 const dynamoClient = new DynamoDBClient({ region: AWS_REGION });
 const docClient = DynamoDBDocumentClient.from(dynamoClient, {
