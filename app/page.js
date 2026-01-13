@@ -56,7 +56,7 @@ export async function getTableNameFromSecrets() {
     return tableName;
   } catch (error) {
     //console.error("Error retrieving table name from Secrets Manager:", error);
-    throw new Error("Failed to retrieve table name from secrets",JSON.stringify(error));
+    throw new Error("Failed to retrieve table name from secrets " + JSON.stringify(error));
   }
 }
 console.log("debug");
